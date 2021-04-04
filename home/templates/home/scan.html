@@ -1,0 +1,60 @@
+{% extends 'home/index.html' %}
+
+
+{% block content %}
+    <div class="row">
+        <div class="mx-auto mt-5 col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Upload Image</h4>
+                </div>
+                <div class="card-body">
+                    <input type="file" id="image-upload">
+                </div>
+            </div>
+        </div>
+        <div class="mx-auto mt-5 col-12">
+            <div class="row">
+                <div class="col-md-5 offset-md-4">
+                    <div style="display:none" id="content">
+                        <img id="img-display" style="width: 400px; height: 400px;">
+                        <button class="mr-5 btn btn-primary" onclick="navigate('/remedy')">Check for remedy</button>
+                        <button class="btn btn-primary" onclick = "parent.location='mailto:abc@abc.com'">Contact pathologist</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const image = document.getElementById("image-upload");
+        const img = document.getElementById("img-display");
+        const divContent = document.getElementById("content");
+
+        function navigate(url) {
+            window.location.href = url;
+        }
+
+        divContent.style.display = "none";
+        //const contentElement = document.getElementById("content");
+        // function toDataURL(url, callback) {
+        //         var xhr = new XMLHttpRequest();
+        //         xhr.onload = function() {
+        //             var reader = new FileReader();
+        //             reader.onloadend = function() {
+        //             callback(reader.result);
+        //             }
+        //             reader.readAsDataURL(xhr.response);
+        //         };
+        //         xhr.open('GET', url);
+        //         xhr.responseType = 'blob';
+        //         xhr.send();
+        // }
+
+        image.addEventListener('input', (e) => {
+            img.src = URL.createObjectURL(e.target.files[0]);
+            divContent.style.display = "block";
+        })
+    </script>
+{% endblock content %}
+    
