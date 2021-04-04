@@ -1,0 +1,10 @@
+.card-form {
+    background-color: rgb(206, 188, 161);
+    border-radius: 4px;
+    z-index: 2;
+    box-shadow: 2px;
+}
+
+body {
+    background-color: aqua;
+}

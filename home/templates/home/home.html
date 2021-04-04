@@ -1,0 +1,36 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="row mx-auto mt-5">
+        <div class="col-md-5 offset-md-2">
+            <div class="card" style="width: 18rem; cursor: pointer;" id="scan">
+                <div class="card-body">
+                  <i class="fas fa-cloud-upload-alt fa-7x" style="margin-left: 60px;"></i>
+                  <p class="card-text text-center mt-3">SCAN OR UPLOAD IMAGE</p>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-5">
+            <div class="card" style="cursor: pointer; width: 18rem;" id="status">
+                <div class="card-body">
+                  <i class="fas fa-tasks fa-7x" style="margin-left: 60px;"></i>
+                  <p class="card-text text-center mt-3">SHOW STATUS</p>
+                </div>
+              </div>
+        </div>
+    </div>
+
+    <script>
+        console.log("hi");
+        const scanElement = document.getElementById("scan");
+        const statusElement = document.getElementById("status");
+
+        scanElement.addEventListener('click', (e) => {
+            window.location.href = "/scan";
+        })
+        statusElement.addEventListener('click', (e) => {
+            window.location.href = "/scan";
+        })
+    </script>
+{% endblock content %}
